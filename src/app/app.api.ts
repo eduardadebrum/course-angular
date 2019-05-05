@@ -1,0 +1,1 @@
+export const META_API = 'http://localhost:3000'
