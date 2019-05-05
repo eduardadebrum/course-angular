@@ -14,10 +14,11 @@ import { RestaurantsComponent } from './restaurants/restaurants.component';
 import { RestaurantComponent } from './restaurants/restaurant/restaurant.component';
 
 import {RestaurantService} from './restaurants/restaurant/restaurant.service';
-import { RestauranDetailComponent } from './restaurants/src/app/restaurants/restauran-detail/restauran-detail.component';
-import { MenuComponent } from './restaurants/restauran-detail/src/app/restaurants/restauran-detail/menu/menu.component';
-import { ShoppingCartComponent } from './restaurants/restauran-detail/src/app/restaurants/restauran-detail/shopping-cart/shopping-cart.component';
-import { MenuItemComponent } from './restaurants/restauran-detail/src/app/restaurants/restauran-detail/menu-item/menu-item.component';
+import { RestauranDetailComponent } from './restaurants/restauran-detail/restauran-detail.component';
+import { MenuComponent } from './restaurants/restauran-detail/menu/menu.component';
+import { ShoppingCartComponent } from './restaurants/restauran-detail/shopping-cart/shopping-cart.component';
+import { MenuItemComponent } from './restaurants/restauran-detail/menu-item/menu-item.component';
+import { ReviewsComponent } from './restaurants/restauran-detail/reviews/reviews.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { MenuItemComponent } from './restaurants/restauran-detail/src/app/restau
     RestauranDetailComponent,
     MenuComponent,
     ShoppingCartComponent,
-    MenuItemComponent
+    MenuItemComponent,
+    ReviewsComponent
   ],
   imports: [
     BrowserModule,
