@@ -7,7 +7,7 @@ import 'rxjs/add/operator/map'
 import 'rxjs/add/operator/catch'
 
 import { META_API } from 'app/app.api'
-import {ErrorHandler} from 'app/app.error.handler'
+import { ErrorHandler } from 'app/app.error.handler'
 
 @Injectable()
 export class RestaurantService {
@@ -21,9 +21,16 @@ export class RestaurantService {
       .catch(ErrorHandler.handleError);
   }
 
-  restaurantById(id:string): Observable<Restaurant> {
-    return this.http.get(`${META_API}/restaurants/${id}`).map(response => response.json()) 
+  restaurantById(id: string): Observable<Restaurant> {
+    return this.http.get(`${META_API}/restaurants/${id}`)
+      .map(response => response.json())
       .catch(ErrorHandler.handleError);
   }
-  
+
+  reviewsOfRestaurant(id: string): Observable<any> {
+    return this.http.get(`${META_API}/restaurants/${id}/reviews`)
+    .map(response => response.json())
+    .catch(ErrorHandler.handleError);
+  }
+
 }
