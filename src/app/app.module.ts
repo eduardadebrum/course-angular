@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, LOCALE_ID } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
-
+import { FormsModule} from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -20,6 +20,7 @@ import { ShoppingCartComponent } from './restaurants/restauran-detail/shopping-c
 import { MenuItemComponent } from './restaurants/restauran-detail/menu-item/menu-item.component';
 import { ReviewsComponent } from './restaurants/restauran-detail/reviews/reviews.component';
 import { ShoppingCartService } from './restaurants/restauran-detail/shopping-cart/shopping-cart.service';
+import { OrderComponent } from './order/order.component';
 
 @NgModule({
   declarations: [
@@ -33,11 +34,13 @@ import { ShoppingCartService } from './restaurants/restauran-detail/shopping-car
     MenuComponent,
     ShoppingCartComponent,
     MenuItemComponent,
-    ReviewsComponent
+    ReviewsComponent,
+    OrderComponent
   ],
   imports: [
     BrowserModule,
     HttpModule,
+    FormsModule,
     RouterModule.forRoot(ROUTES) // passando array de rotas.
   ],
   providers: [RestaurantService, ShoppingCartService, { provide: LOCALE_ID, useValue: 'pt-BR' }],
