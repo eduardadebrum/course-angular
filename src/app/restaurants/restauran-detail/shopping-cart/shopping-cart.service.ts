@@ -32,4 +32,8 @@ export class ShoppingCartService {
       .reduce((prev, atua) => prev + atua, 0)  // reduz começa com 0.gr
   }
 
+  increaseQty(item: any) {
+    throw new Error("Method not implemented.");
+  }
+
 }
