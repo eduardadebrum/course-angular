@@ -32,13 +32,10 @@
           </mt-input-container>
         </div>
 
-        <div class="col-sm-3 col-xs-6">
-          <div class="form-group has-error">
+        <div class="col-sm-3 col-xs-6">      
             <mt-input-container>
-              <input type="text" name ="optional" class="form-control" ngModel placeholder="Complemento"/>
+              <input type="text" name ="optionalAddress" class="form-control" ngModel placeholder="Complemento"/>
             </mt-input-container>
-          </div>
-
         </div>
         <!-- /.col -->
       </div>
@@ -66,7 +63,7 @@
 
           <div class="form-group">
             <!-- radio -->
-            <mt-radio [options]="paymentOptions" name="paymentOptions">
+            <mt-radio [options]="paymentOptions" name="paymentOptions" required>
             </mt-radio>
           </div>
 
@@ -75,8 +72,10 @@
         <div class="col-sm-6 col-xs-12">
           <p class="lead">Frete e Total:</p>
 
-           <mt-delivery-costs></mt-delivery-costs> 
-           
+           <!-- <mt-delivery-costs [delivery]="delivery" [itemsValue]="itemsValue()"></mt-delivery-costs>  -->
+
+           <mt-delivery-costs [delivery]="delivery" [itemsValue]="itemsValue()"></mt-delivery-costs> 
+
         </div>
         <!-- /.col -->
       </div>
@@ -85,9 +84,10 @@
 
     <div class="row">
       <div class="col-xs-12">
-        <a href="order-summary.html" class="btn btn-success pull-right"><i class="fa fa-credit-card"></i> Concluir
-          Pedido
-        </a>
+        <button (click)="checkOrder(form.value)" class="btn btn-success pull-right" 
+        [disabled]="!form.valid || cartItems().length === 0">
+          <i class="fa fa-credit-card"></i> Concluir Pedido
+        </button>
       </div>
     </div>
 
